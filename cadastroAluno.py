@@ -67,12 +67,12 @@ def display():
     for aluno in aluno:
         print(aluno)
 
-def updade(id,new_nome,new_email,new_idade):
+def update(id,new_nome,new_email,new_idade):
     
     conexao = sqlite3.connect("escola.db") #abrir a conexao com o banco  
     cursor = conexao.cursor() 
 
-    cursor.execute("UPDADE  aluno SET nome = ?,, email = ?, idade = ? WHERE id = ?",
+    cursor.execute("UPDATE  aluno SET nome = ?,, email = ?, idade = ? WHERE id = ?",
                    (new_nome,new_email,new_idade,id))
     
     conexao.commit() 
@@ -96,6 +96,7 @@ if __name__ == "__main__":
             new_nome  = input ("Novo Nome")
             new_email = input ("Novo Email")
             new_idade =  input ("Nova Idade")
+            update(id,new_nome,new_email,new_idade)
         elif opcao == "5":    
             break
         else:
