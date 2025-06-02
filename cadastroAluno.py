@@ -92,7 +92,7 @@ if __name__ == "__main__":
         elif opcao == "2":    
             display()
         elif opcao == "3":
-            id = int(input("informe o ID do Aluno que vc quer atualizar"))
+            id = int(input("informe o ID do Aluno que vc quer atualizar:"))
             new_nome  = input ("Novo Nome")
             new_email = input ("Novo Email")
             new_idade =  input ("Nova Idade")
