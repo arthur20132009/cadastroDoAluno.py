@@ -1,4 +1,3 @@
-#Manu principal do Sisteme 
 
 import sqlite3
 
@@ -50,9 +49,6 @@ def register(nome,email,idade):
         conexao.close()
 
 
-    
-
-
 def display():
     conexao = sqlite3.connect("escola.db") #abrir a conexao com o banco  
     cursor = conexao.cursor() 
@@ -97,12 +93,11 @@ if __name__ == "__main__":
             new_email = input ("Novo Email")
             new_idade =  input ("Nova Idade")
             update(id,new_nome,new_email,new_idade)
-        elif opcao == "5":    
+        elif opcao == "5":  
             break
         else:
             print("Opcao Invalida") 
 
 print(" Sistema da Cadastro da Aluno")
-
 
 
