@@ -89,6 +89,12 @@ if __name__ == "__main__":
             register(nome,email,idade)
         elif opcao == "2":    
             display()
+        elif opcao == "3":
+             id = int(input("Informe o ID do Aluno que vc quer atualizar"))
+            new_nome = input("Novo Nome")
+            new_email = input("Novo Email")
+            new_idade = int(input("Nova Idade"))
+            update(id,new_nome,new_email,new_idade)
         elif opcao == "5":    
             break
         else:
