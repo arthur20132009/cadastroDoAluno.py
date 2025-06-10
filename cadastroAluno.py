@@ -63,6 +63,17 @@ def display():
     for aluno in aluno:
         print(aluno)
 
+def delete(id:str):
+    conexao = sqlite3.connect("escola.db") #abrir a conexao com o banco  
+    cursor = conexao.cursor() 
+
+    cursor.execute("DELETE FROM aluno WHERE id = ?",
+                   (id))
+    
+    conexao.commit() 
+    conexao.close()
+    print("Aluno  excluido  com sucesso")
+
 def update(id,new_nome,new_email,new_idade):
     
     conexao = sqlite3.connect("escola.db") #abrir a conexao com o banco  
@@ -93,6 +104,9 @@ if __name__ == "__main__":
             new_email = input ("Novo Email")
             new_idade =  input ("Nova Idade")
             update(id,new_nome,new_email,new_idade)
+            elif opcao == "4":
+             id = input("informe o ID que deseja deletar:")
+             delete(id)  
         elif opcao == "5":  
             break
         else:
